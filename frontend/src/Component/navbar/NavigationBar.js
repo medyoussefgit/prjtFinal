@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../redux/actions/useraction";
 
 
 const pages = ["Home", "Products","Users"];
@@ -41,7 +42,7 @@ const NavigationBar = () => {
     setAnchorElUser(null);
   };
   const handleCloseUserMenuLog = () => {
-    // dispatch(logout());
+    dispatch(logout());
 
     setAnchorElUser(null);
   };

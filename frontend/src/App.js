@@ -6,6 +6,9 @@ import './App.css';
 import Home from './Component/home/Home';
 
 import NavigationBar from './Component/navbar/NavigationBar';
+import PrivateRoute from './Component/PrivateRouter';
+import DashbooardAdmin from './Component/PrivateRouter/Dashbords/DashboardAdmin';
+import DashboardClient from './Component/PrivateRouter/Dashbords/DashboardClient';
 //  import { useDispatch } from "react-redux";
 function App() {
   return (
@@ -17,6 +20,22 @@ function App() {
     <Route path="/register" element={<SignUp />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/" element={<Home />} />
+        <Route
+          path="/dachboardClient"
+          element={
+            <PrivateRoute>
+              <DashboardClient />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/dachboardAdmin"
+          element={
+            <PrivateRoute>
+              <DashbooardAdmin />
+            </PrivateRoute>
+          }
+        />
         </Routes>    
     
     </div>

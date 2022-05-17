@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -9,10 +8,14 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {useDispatch} from 'react-redux'
+
+import {useNavigate} from 'react-router-dom'
+import { registre } from '../../redux/actions/useraction';
 
 function Copyright(props) {
   return (
@@ -30,13 +33,22 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
+  const dispatch=useDispatch()
+  const navigate=useNavigate()
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get('email'),
       password: data.get('password'),
+      fullName:data.get('fullName')
     });
+    dispatch( registre({
+      email: data.get('email'),
+      password: data.get('password'),
+      fullName:data.get('fullName')
+    },navigate))
+
   };
 
   return (
@@ -52,7 +64,7 @@ export default function SignUp() {
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            
+            <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign up
@@ -62,24 +74,15 @@ export default function SignUp() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
-                  name="firstName"
+                  name="fullName"
                   required
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="fullName"
+                  label="fullName"
                   autoFocus
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid>
+             
               <Grid item xs={12}>
                 <TextField
                   required
