@@ -1,9 +1,15 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllDemande } from '../../../redux/actions/demandeaction';
 
 
 const DashbooardAdmin = () => {
   const currentUser = useSelector((state) => state.userReducer.currentUser);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    
+    dispatch(getAllDemande());
+  }, [dispatch]);
   
   return (
     <div>

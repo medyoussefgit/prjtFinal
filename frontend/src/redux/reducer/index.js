@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
 import userReducer from './userReducer'
-
-export const rootReducer = combineReducers({ userReducer })
+import { productReducer } from './productReducer'
+import {demandeReducer} from './demandeReducer'
+export const rootReducer = combineReducers({ userReducer,productReducer,demandeReducer})
