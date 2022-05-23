@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './App.css';
  import SignIn from './Component/Auth/SignIn';
  import SignUp from './Component/Auth/SignUp'
@@ -53,14 +53,10 @@ function App() {
         <Route
           path="/productList"
           element={
-            <div>
-              <Link to="/addProduct">
-                {localStorage.getItem("token") ? (
-                  <button>ADD PRODUCT</button>
-                ) : null}
-              </Link>{" "}
-              <ProductList />{" "}
-            </div>
+           
+              
+              <ProductList />
+            
           }
         />
         <Route

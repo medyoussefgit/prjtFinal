@@ -16,7 +16,7 @@ export const getAllProducts = () => async(dispatch) => {
 export const addProduct = (newProduct, navigate) => async(dispatch) => {
     try {
         const opts = {
-            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+            headers: { Authorization: `${localStorage.getItem("token")}` },
         };
         const response = await axios.post(
             "http://localhost:5000/product/addProduct",
@@ -36,7 +36,7 @@ export const addProduct = (newProduct, navigate) => async(dispatch) => {
 export const deleteProduct = (idProduct) => async(dispatch) => {
     try {
         const opts = {
-            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+            headers: { Authorization: `${localStorage.getItem("token")}` },
         };
         const response = await axios.delete(
             `http://localhost:5000/product/delete/${idProduct}`, opts

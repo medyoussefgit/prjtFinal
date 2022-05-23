@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Link } from "react-router-dom";
+ import { Link } from "react-router-dom";
 import { deleteProduct } from "../../redux/actions/productaction";
 // import { deleteProduct } from "../../redux/actions/productactions";
 
@@ -28,12 +28,27 @@ export default function Product({ el }) {
           {el.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {el.createDate} by {el.user.fullName}
+          <h3>prix par jour:</h3>
+          {el.price} 
         </Typography>
       </CardContent>
+      {user&&user.role==="client"?<CardActions>
+       
+        
+        <Link to="/adddemande">
+                {localStorage.getItem("token") ? (
+                  <button>Demande</button>
+                ) : null}
+              </Link>{" "}
+      </CardActions>:null}
      {user&&user.role==="admin"?<CardActions>
-       <Link to ={`/edit/${el._id}`} ><Button size="small" >Edit</Button></Link> 
-        <Button size="small" onClick={()=>dispatch(deleteProduct(el._id))}>Delete</Button>
+       
+        <Button size="small" onClick={()=>dispatch(deleteProduct(el._id))}><h3>Delete</h3></Button>
+        <Link to="/addProduct">
+                {localStorage.getItem("token") ? (
+                  <button>ADD PRODUCT</button>
+                ) : null}
+              </Link>{" "}
       </CardActions>:null}
     </Card>
     </div>

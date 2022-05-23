@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import { ADD_DEMANDE_FAIL, ADD_DEMANDE_SUCCESS, DELETE_DEMANDE_FAIL, DELETE_DEMANDE_SUCCESS, GET_ALL_DEMANDE_CLIENT_FAIL, GET_ALL_DEMANDE_CLIENT_SUCCESS, GET_ALL_DEMANDE_FAIL, GET_ALL_DEMANDE_SUCCESS, GET_DEMANDE_FAIL, GET_DEMANDE_SUCCESS, LOAD_DEMANDE } from "../actionsTypes/demandeactiontype";
-import { getAllProducts } from "./productaction";
+
 
 export const getAllDemande = () => async(dispatch) => {
     dispatch({ type: LOAD_DEMANDE });
@@ -62,10 +62,10 @@ export const getOneDemande = (iddemande) => async(dispatch) => {
     }
 };
 
-export const deleteProduct = (iddemande) => async(dispatch) => {
+export const deleteDemande = (iddemande) => async(dispatch) => {
     try {
         const opts = {
-            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+            headers: { Authorization: `${localStorage.getItem("token")}` },
         };
         const response = await axios.delete(
             `http://localhost:5000/demande/delete/${iddemande}`, opts
