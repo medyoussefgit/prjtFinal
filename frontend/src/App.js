@@ -17,6 +17,8 @@ import { getAllProducts } from './redux/actions/productaction';
  import { useDispatch } from "react-redux";
 import ADDDemande from './Component/PrivateRouter/demande/ADDDemande';
 import { getUser } from './redux/actions/useraction';
+// import Navbar from './Component/navbar/NavBar';
+ import Navig from './Component/navbar/Navig';
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -27,7 +29,8 @@ function App() {
   return (
     
     <div className="App">
-<NavigationBar/>
+    <Navig/>
+   <NavigationBar/>
     
     <Routes>
     <Route path="/register" element={<SignUp />} />
