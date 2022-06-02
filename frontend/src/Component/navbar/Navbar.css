@@ -1,6 +1,6 @@
 .navbar {
     height: 12vh;
-    background: #f5c6c6;
+    background: #FAFAFB;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -34,16 +34,16 @@
 
 .nav-item a {
     text-decoration: none;
-    color: rgb(239, 19, 180);
+    color: #EFB7BA;
     font-size: 1.5rem;
     margin-right: 2rem;
     padding: 6px 16px;
     border-radius: 10px;
-    text-shadow: 4px 4px 4px #fff;
+    /* text-shadow: 4px 4px 4px #E5C0C8; */
 }
 
 .nav-item a:hover {
-    background: #fdfbfb;
+    color: #CBD5F0;
 }
 
 .logo {
@@ -51,6 +51,6 @@
     justify-content: flex-start;
     width: 70vw;
     justify-content: center;
-    height: 150px;
-    width: 150px;
+    height: 80px;
+    width: 200px;
 }

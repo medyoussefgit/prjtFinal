@@ -73,7 +73,7 @@ const [price, setPrice] = React.useState(0)
                 fullWidth
                 name="price"
                 label="Price"
-                type="Number"
+                type="String"
                 id="price"
                 autoComplete="current-password"
                 onChange={(e) =>setPrice(e.target.value)}

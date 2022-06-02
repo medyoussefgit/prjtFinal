@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-
-
-
 import { navItems } from "./Navitems";
-// import Button from "./Buttonc";
-import Dropdown from "./Dropdown";
 import Buttonc from "./Buttonc";
+import Dropdown from "./Dropdown";
 
 function Navig() {
   const [dropdown, setDropdown] = useState(false);
@@ -16,7 +12,7 @@ function Navig() {
     <>
       <nav className="navbar">
         <Link to="/" className="navbar-logo">
-         <img src="azalee.png" alt="logo" className="logo"/>
+         <img src="azalea.png" alt="logo" className="logo"/>
          
         </Link>
         <ul className="nav-items">

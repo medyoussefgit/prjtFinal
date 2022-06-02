@@ -16,10 +16,11 @@ export default function Product({ el }) {
   const user=useSelector(state=>state.userReducer.currentUser)
   return (
     <div style={{margin:"10px"}}>
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 644 }}>
       <CardMedia
         component="img"
-        height="140"
+        height="500"
+        width="500"
         image={el.image}
         alt="green iguana"
       />

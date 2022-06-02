@@ -7,7 +7,7 @@ import './App.css';
  import SignUp from './Component/Auth/SignUp'
 import Home from './Component/home/Home';
 
-import NavigationBar from './Component/navbar/NavigationBar';
+// import NavigationBar from './Component/navbar/NavigationBar';
 import PrivateRoute from './Component/PrivateRouter';
 import DashbooardAdmin from './Component/PrivateRouter/Dashbords/DashboardAdmin';
 import DashboardClient from './Component/PrivateRouter/Dashbords/DashboardClient';
@@ -30,8 +30,8 @@ function App() {
     
     <div className="App">
     <Navig/>
-   <NavigationBar/>
-    
+   
+   
     <Routes>
     <Route path="/register" element={<SignUp />} />
         <Route path="/login" element={<SignIn />} />
