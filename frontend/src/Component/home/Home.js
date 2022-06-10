@@ -1,7 +1,8 @@
 import React from "react";
 import "./home.css";
 import { Link } from "react-router-dom";
-// import Gallery from "./Gallery";
+import Gallery from "./Gallery";
+
 
 
 function Home() {
@@ -59,7 +60,8 @@ function Home() {
           </Link>
         </div>
       </div>
-
+      
+      <Link to="adddemande">
       {/* bouton de devis  */}
       <div className="bouton">
         <div className="text">
@@ -67,18 +69,25 @@ function Home() {
           <span></span>
           <span></span>
           <span></span>
-          <p> DEMANDER UN DEVIS </p>
+          <p> DEMANDER VOTRE DEVIS </p>
         </div>
       </div>
       {/* en image  */}
+      </Link>
+
       <div className="Images">
         <h1> En images</h1>
         <p>
-          Profitez d’un event planner dédié ! Quel événement sur mesure
-          souhaitez-vous décorer et organiser ?
+          Profitez d’un event planner dédié ! 
+          <br/>
+          Quel événement sur mesure souhaitez-vous décorer et organiser ?
         </p>
-       {/* <Gallery/>*/}
+        
       </div>
+      <div> 
+        <Gallery/>
+      </div>
+     
     </div>
   );
 }

@@ -19,6 +19,10 @@ import ADDDemande from './Component/PrivateRouter/demande/ADDDemande';
 import { getUser } from './redux/actions/useraction';
 // import Navbar from './Component/navbar/NavBar';
  import Navig from './Component/navbar/Navig';
+ import Footer from "./Component/home/Footer"
+ import Anniversaire from "./Component/pages/Anniversaire"
+ import Mariage from "./Component/pages/Mariage"
+ import Fiancailles from "./Component/pages/Fiancailles"
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -78,8 +82,35 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route
+        path="/anniversaire"
+        element={
+         
+            <Anniversaire/>
+            
+          
+        }
+      />
+      <Route
+        path="/mariage"
+        element={
+         
+            <Mariage/>
+            
+          
+        }
+      />
+      <Route
+        path="/fiançailles"
+        element={
+         
+            <Fiancailles/>
+            
+          
+        }
+      />
         </Routes>    
-    
+    <div><Footer/></div>
     </div>
   );
 }
